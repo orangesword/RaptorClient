@@ -1,0 +1,33 @@
+{
+  "required": true,
+  "compatibilityLevel": "JAVA_8",
+  "package": "com.raptordev.raptor.mixin.mixins",
+  "refmap": "mixins.raptor.refmap.json",
+  "mixins": [
+    "MixinAbstractClientPlayer",
+    "MixinBlockLiquid",
+    "MixinBlockSoulSand",
+    "MixinEntity",
+    "MixinEntityPlayer",
+    "MixinEntityPlayerSP",
+    "MixinEntityRenderer",
+    "MixinFontRenderer",
+    "MixinGuiBossOverlay",
+    "MixinGuiNewChat",
+    "MixinGuiPlayerTabOverlay",
+    "MixinGuiScreen",
+    "MixinItemRenderer",
+    "MixinLayerBipedArmor",
+    "MixinMinecraft",
+    "MixinMovementInputFromOptions",
+    "MixinNetworkManager",
+    "MixinPlayerControllerMP",
+    "MixinPlayerOverlay",
+    "MixinRenderGlobal",
+    "MixinRenderLivingBase",
+    "MixinRenderManager",
+    "MixinRenderPlayer",
+    "MixinWorld",
+    "accessor.AccessorEntityPlayerSP"
+  ]
+}
