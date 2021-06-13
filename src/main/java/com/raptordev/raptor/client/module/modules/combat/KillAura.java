@@ -39,12 +39,8 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
-/**
- * @author 0b00101010
- * @since 07/02/2021
- */
 
-@Module.Declaration(name = "KillAura", category = Category.Combat, Description = "Attacks opponent through walls at an extended reach")
+@Module.Declaration(name = "Aura", category = Category.Combat, Description = "Attacks opponent through walls at an extended reach")
 public class KillAura extends Module {
 
     BooleanSetting players = registerBoolean("Players", true);

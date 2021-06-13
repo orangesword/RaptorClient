@@ -48,7 +48,7 @@ import java.util.Objects;
 
 /**
  * @author TechAle
- * Ported and modified from PistonCrystal
+ * Ported and modified from PistonCrystal of GS
  * last edit 06/04/21
  */
 

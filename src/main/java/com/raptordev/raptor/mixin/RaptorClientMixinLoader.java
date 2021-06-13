@@ -16,7 +16,7 @@ public class RaptorClientMixinLoader implements IFMLLoadingPlugin {
     private static boolean isObfuscatedEnvironment = false;
 
     public RaptorClientMixinLoader() {
-        RaptorClient.LOGGER.info("Mixins initialized");
+        RaptorClient.log("Mixins initialized");
         MixinBootstrap.init();
         Mixins.addConfiguration("mixins.raptor.json");
         MixinEnvironment.getDefaultEnvironment().setObfuscationContext("searge");

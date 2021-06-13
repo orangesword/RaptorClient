@@ -16,7 +16,6 @@
 ## Table of Contents
 * [Information](#Information)
     * [About](#About)
-    * [Contributors](#Contributors)
     * [Additional Credits](#Credits)
 * [Installation](#Installation)
 * [Contributing](#Contributing)

@@ -1,8 +1,6 @@
 package com.raptordev.raptor.client.module;
 
-import com.raptordev.raptor.client.module.modules.client.ClickGuiModule;
-import com.raptordev.raptor.client.module.modules.client.ColorMain;
-import com.raptordev.raptor.client.module.modules.client.HUDEditor;
+import com.raptordev.raptor.client.module.modules.client.*;
 import com.raptordev.raptor.client.module.modules.combat.*;
 import com.raptordev.raptor.client.module.modules.exploits.*;
 import com.raptordev.raptor.client.module.modules.client.hud.*;
@@ -122,10 +120,12 @@ public class ModuleManager {
         addMod(new TextRadar());
         addMod(new Watermark());
         addMod(new Welcomer());
-        //GUI
+        //Client
         addMod(new ClickGuiModule());
         addMod(new ColorMain());
         addMod(new HUDEditor());
+        addMod(new ToggleMessage());
+        addMod(new BetterConfig());
     }
 
     public static void addMod(Module module) {

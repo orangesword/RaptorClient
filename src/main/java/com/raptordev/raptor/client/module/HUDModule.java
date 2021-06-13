@@ -10,9 +10,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-/**
- * @author lukflug
- */
+//From GameSense @author Lukflug
 
 public abstract class HUDModule extends Module {
 

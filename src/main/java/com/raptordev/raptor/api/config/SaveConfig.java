@@ -8,6 +8,7 @@ import com.raptordev.raptor.api.util.player.social.SocialManager;
 import com.raptordev.raptor.client.RaptorClient;
 import com.raptordev.raptor.api.clickgui.GuiConfig;
 import com.raptordev.raptor.client.command.CommandManager;
+import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;
 import com.raptordev.raptor.client.module.modules.misc.AutoGG;
@@ -24,15 +25,12 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-/**
- * @author Hoosiers
- * @since 10/15/2020
- */
 
 public class SaveConfig {
 
     public static final String fileName = "RaptorClient/";
     private static final String moduleName = "Modules/";
+    private static final String categoryMisc = "/";
     private static final String mainName = "Main/";
     private static final String miscName = "Misc/";
 

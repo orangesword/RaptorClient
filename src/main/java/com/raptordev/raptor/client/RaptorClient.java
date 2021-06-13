@@ -12,9 +12,11 @@ import com.raptordev.raptor.client.command.CommandManager;
 import com.raptordev.raptor.api.manager.ManagerLoader;
 import com.raptordev.raptor.client.module.ModuleManager;
 
+import com.raptordev.raptor.client.module.modules.client.BetterConfig;
 import com.raptordev.raptor.client.module.modules.client.ClickGuiModule;
 import com.raptordev.raptor.client.module.modules.misc.AutoSpam;
 import com.raptordev.raptor.client.module.modules.render.Freecam;
+import com.raptordev.raptor.client.plugin.PluginScreen;
 import me.zero.alpine.EventBus;
 import me.zero.alpine.EventManager;
 
@@ -51,6 +53,7 @@ public class RaptorClient {
 
     @Mod.EventHandler
     public void init(FMLPreInitializationEvent event) {
+        Display.setTitle("RaptorClient" + " " + MODVER);
         cFontRenderer = new CFontRenderer(new Font("Verdana", Font.BOLD, 18), true, true);
         log("Custom font initialized!");
         VersionChecker.init();
@@ -59,8 +62,6 @@ public class RaptorClient {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-        Display.setTitle("RaptorClient" + " " + MODVER);
-
         log("Starting up " + "RaptorClient" + " " + MODVER + "!");
 
         startClient();
@@ -68,6 +69,7 @@ public class RaptorClient {
 
         log("Checking Modules");
         checkmodules();
+        log("Modules Checked");
 
     }
 
@@ -103,8 +105,6 @@ public class RaptorClient {
         DiscordManager.startRPC();
         log("RPC Started");
 
-        log("Plugins Started");
-
     }
 
     private void checkmodules() {
@@ -121,6 +121,7 @@ public class RaptorClient {
             log("Detected clickgui");}
         if (ModuleManager.getModule(ClickGuiModule.class).isToggleMsg())
             ModuleManager.getModule(ClickGuiModule.class).setToggleMsg(false);
+
 
     }
 

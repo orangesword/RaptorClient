@@ -45,7 +45,7 @@ import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.util.*;
 
-@Module.Declaration(name = "RCAutoCrystal", category = Category.Combat, priority = 100, Description = "Automatically places and breaks crystals to attempt kill opponent")
+@Module.Declaration(name = "CrystalAuraRC", category = Category.Combat, priority = 100, Description = "Automatically places and breaks crystals to attempt kill opponent")
 public class AutoCrystal extends Module {
 
     ModeSetting breakMode = registerMode("Target", Arrays.asList("All", "Smart", "Own"), "All");
