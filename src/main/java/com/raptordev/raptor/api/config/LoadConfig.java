@@ -17,6 +17,7 @@ import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import com.raptordev.raptor.api.setting.values.*;
+import com.raptordev.raptor.client.module.modules.misc.AutoSpam;
 
 import java.awt.*;
 import java.io.IOException;
@@ -339,10 +340,28 @@ public class LoadConfig {
         if (mainObject.get("Messages") == null) {
             return;
         }
-
         JsonArray messageObject = mainObject.get("Messages").getAsJsonArray();
 
         messageObject.forEach(object -> AutoGG.addAutoGgMessage(object.getAsString()));
+        inputStream.close();
+    }
+
+    private static void loadAutoSpam() throws IOException {
+        String fileLocation = fileName + miscName;
+
+        if (!Files.exists(Paths.get(fileLocation + "AutoSpam" + ".json"))) {
+            return;
+        }
+
+        InputStream inputStream = Files.newInputStream(Paths.get(fileLocation + "AutoSpam" + ".json"));
+        JsonObject mainObject = new JsonParser().parse(new InputStreamReader(inputStream)).getAsJsonObject();
+
+        if (mainObject.get("Messages") == null) {
+            return;
+        }
+        JsonArray messageObject = mainObject.get("Messages").getAsJsonArray();
+
+        messageObject.forEach(object -> AutoSpam.spamMessages.add(object.getAsString()));
         inputStream.close();
     }
 

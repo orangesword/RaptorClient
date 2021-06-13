@@ -24,10 +24,6 @@ import net.minecraft.tileentity.*;
 
 import java.util.Arrays;
 
-/**
- * @author Hoosiers on 09/22/2020
- * @author Techale on 12/19/2020
- */
 
 @Module.Declaration(name = "ESP", category = Category.Render)
 public class ESP extends Module {

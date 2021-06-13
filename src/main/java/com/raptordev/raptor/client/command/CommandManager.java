@@ -29,6 +29,7 @@ public class CommandManager {
         addCommand(new SaveConfigCommand());
         addCommand(new SetCommand());
         addCommand(new ToggleCommand());
+        addCommand(new AutoSpamCommand());
     }
 
     public static void addCommand(Command command) {

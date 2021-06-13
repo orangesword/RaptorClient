@@ -16,6 +16,7 @@ import com.raptordev.raptor.client.module.modules.misc.AutoReply;
 import com.raptordev.raptor.client.module.modules.misc.AutoRespawn;
 import com.google.gson.*;
 import com.raptordev.raptor.api.setting.values.*;
+import com.raptordev.raptor.client.module.modules.misc.AutoSpam;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -48,12 +49,13 @@ public class SaveConfig {
             saveEnemiesList();
             saveClickGUIPositions();
             saveAutoGG();
+            saveAutoSpam();
             saveAutoReply();
             saveAutoRespawn();
         } catch (IOException e) {
             e.printStackTrace();
         }
-        RaptorClient.LOGGER.info("Saved Config!");
+        RaptorClient.log("Saved Config!");
     }
 
     private static void saveConfig() throws IOException {
@@ -276,6 +278,24 @@ public class SaveConfig {
 
         for (String autoGG : AutoGG.getAutoGgMessages()) {
             messageArray.add(autoGG);
+        }
+        mainObject.add("Messages", messageArray);
+        String jsonString = gson.toJson(new JsonParser().parse(mainObject.toString()));
+        fileOutputStreamWriter.write(jsonString);
+        fileOutputStreamWriter.close();
+    }
+
+    private static void saveAutoSpam() throws IOException {
+
+        registerFiles(miscName, "Spam");
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        OutputStreamWriter fileOutputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName + miscName + "AutoSpam" + ".json"), StandardCharsets.UTF_8);
+        JsonObject mainObject = new JsonObject();
+        JsonArray messageArray = new JsonArray();
+
+        for (String autoSpam : AutoSpam.spamMessages) {
+            messageArray.add(autoSpam);
         }
         mainObject.add("Messages", messageArray);
         String jsonString = gson.toJson(new JsonParser().parse(mainObject.toString()));
