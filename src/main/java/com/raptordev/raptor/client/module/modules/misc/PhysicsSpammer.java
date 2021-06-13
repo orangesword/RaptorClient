@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 
-@Module.Declaration(name = "PhysicsSpammer", category = Category.Misc, Shown = false)
+@Module.Declaration(name = "PhysicsSpammer", category = Category.Misc)
 public class PhysicsSpammer extends Module {
 
     IntegerSetting minDelay = registerInteger("Min Delay", 5, 1, 100);

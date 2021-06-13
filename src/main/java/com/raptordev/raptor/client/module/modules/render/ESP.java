@@ -139,9 +139,9 @@ public class ESP extends Module {
     private void defineEntityColors(Entity entity) {
         if (entity instanceof EntityPlayer) {
             if (SocialManager.isFriend(entity.getName())) {
-                playerColor = ModuleManager.getModule(ColorMain.class).getFriendGSColor();
+                playerColor = ModuleManager.getModule(ColorMain.class).getFriendRCColor();
             } else if (SocialManager.isEnemy(entity.getName())) {
-                playerColor = ModuleManager.getModule(ColorMain.class).getEnemyGSColor();
+                playerColor = ModuleManager.getModule(ColorMain.class).getEnemyRCColor();
             } else {
                 playerColor = new RCColor(mainColor.getValue(), opacityGradient);
             }

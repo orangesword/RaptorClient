@@ -11,7 +11,7 @@ import com.raptordev.raptor.client.module.ModuleManager;
 import com.raptordev.raptor.client.module.modules.combat.AutoCrystal;
 
 
-@Module.Declaration(name = "BetterConfig", category = Category.CLIENT, Description = "Save your configs in better way")
+@Module.Declaration(name = "BetterConfig", category = Category.CLIENT, Description = "Save your configs in better way", enabled = true)
 public class BetterConfig extends Module {
 
     IntegerSetting delay = registerInteger("Timer", 300,60,600);

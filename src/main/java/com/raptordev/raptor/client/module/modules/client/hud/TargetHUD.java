@@ -45,9 +45,9 @@ public class TargetHUD extends HUDModule {
 
     private static Color getNameColor(String playerName) {
         if (SocialManager.isFriend(playerName)) {
-            return new RCColor(ModuleManager.getModule(ColorMain.class).getFriendGSColor(), 255);
+            return new RCColor(ModuleManager.getModule(ColorMain.class).getFriendRCColor(), 255);
         } else if (SocialManager.isEnemy(playerName)) {
-            return new RCColor(ModuleManager.getModule(ColorMain.class).getEnemyGSColor(), 255);
+            return new RCColor(ModuleManager.getModule(ColorMain.class).getEnemyRCColor(), 255);
         } else {
             return new RCColor(255, 255, 255, 255);
         }

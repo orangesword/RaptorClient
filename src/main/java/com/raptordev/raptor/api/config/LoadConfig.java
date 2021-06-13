@@ -26,10 +26,6 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 
-/**
- * @author Hoosiers
- * @since 10/15/2020
- */
 
 public class LoadConfig {
 
@@ -346,24 +342,24 @@ public class LoadConfig {
         inputStream.close();
     }
 
-    private static void loadAutoSpam() throws IOException {
-        String fileLocation = fileName + miscName;
-
-        if (!Files.exists(Paths.get(fileLocation + "AutoSpam" + ".json"))) {
-            return;
-        }
-
-        InputStream inputStream = Files.newInputStream(Paths.get(fileLocation + "AutoSpam" + ".json"));
-        JsonObject mainObject = new JsonParser().parse(new InputStreamReader(inputStream)).getAsJsonObject();
-
-        if (mainObject.get("Messages") == null) {
-            return;
-        }
-        JsonArray messageObject = mainObject.get("Messages").getAsJsonArray();
-
-        messageObject.forEach(object -> AutoSpam.spamMessages.add(object.getAsString()));
-        inputStream.close();
-    }
+//    private static void loadAutoSpam() throws IOException {
+//        String fileLocation = fileName + miscName;
+//
+//        if (!Files.exists(Paths.get(fileLocation + "AutoSpam" + ".json"))) {
+//            return;
+//        }
+//
+//        InputStream inputStream = Files.newInputStream(Paths.get(fileLocation + "AutoSpam" + ".json"));
+//        JsonObject mainObject = new JsonParser().parse(new InputStreamReader(inputStream)).getAsJsonObject();
+//
+//        if (mainObject.get("Messages") == null) {
+//            return;
+//        }
+//        JsonArray messageObject = mainObject.get("Messages").getAsJsonArray();
+//
+//        messageObject.forEach(object -> AutoSpam.spamMessages.add(object.getAsString()));
+//        inputStream.close();
+//    }
 
     private static void loadAutoReply() throws IOException {
         String fileLocation = fileName + miscName;

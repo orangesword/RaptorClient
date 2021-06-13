@@ -40,9 +40,6 @@ public abstract class Module implements Toggleable, KeybindSetting {
         boolean drawn() default true;
 
         boolean toggleMsg() default true;
-
-
-        boolean Shown() default true;
     }
 
     private final String name = getDeclaration().name();
@@ -52,7 +49,6 @@ public abstract class Module implements Toggleable, KeybindSetting {
     private int bind = getDeclaration().bind();
     private boolean enabled = getDeclaration().enabled();
     private boolean drawn = getDeclaration().drawn();
-    private boolean shown = getDeclaration().Shown();
     private boolean toggleMsg = getDeclaration().toggleMsg();
 
     private Declaration getDeclaration() {
@@ -162,14 +158,6 @@ public abstract class Module implements Toggleable, KeybindSetting {
     public boolean isToggleMsg() {
 
         return this.toggleMsg;
-    }
-
-    public boolean isShown() {
-        return shown;
-    }
-
-    public void setShown(boolean shown) {
-        this.shown = shown;
     }
 
     public void setToggleMsg(boolean toggleMsg) {

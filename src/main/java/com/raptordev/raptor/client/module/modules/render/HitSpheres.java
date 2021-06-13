@@ -43,10 +43,10 @@ public class HitSpheres extends Module {
         double distance = mc.player.getDistance(entityPlayer);
         ColorMain colorMain = ModuleManager.getModule(ColorMain.class);
 
-        if (SocialManager.isFriend(name)) return colorMain.getFriendGSColor();
+        if (SocialManager.isFriend(name)) return colorMain.getFriendRCColor();
         else if (distance >= 8) return new RCColor(0, 255, 0, 255);
         else if (distance < 8) return new RCColor(255, (int) (mc.player.getDistance(entityPlayer) * 255 / 150), 0, 255);
-        else if (SocialManager.isEnemy(name)) return colorMain.getEnemyGSColor();
+        else if (SocialManager.isEnemy(name)) return colorMain.getEnemyRCColor();
         else return new RCColor(1, 1, 1, 255);
     }
 }

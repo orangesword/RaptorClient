@@ -2,6 +2,7 @@
   "required": true,
   "compatibilityLevel": "JAVA_8",
   "package": "com.raptordev.raptor.mixin.mixins",
+  "minVersion": "0.7.4",
   "refmap": "mixins.raptor.refmap.json",
   "mixins": [
     "MixinAbstractClientPlayer",

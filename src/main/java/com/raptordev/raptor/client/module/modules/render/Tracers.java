@@ -47,9 +47,9 @@ public class Tracers extends Module {
                         return;
                     } else {
                         if (SocialManager.isFriend(e.getName())) {
-                            tracerColor = colorMain.getFriendGSColor();
+                            tracerColor = colorMain.getFriendRCColor();
                         } else if (SocialManager.isEnemy(e.getName())) {
-                            tracerColor = colorMain.getEnemyGSColor();
+                            tracerColor = colorMain.getEnemyRCColor();
                         } else {
                             if (mc.player.getDistance(e) < 20) {
                                 tracerColor = nearColor.getValue();

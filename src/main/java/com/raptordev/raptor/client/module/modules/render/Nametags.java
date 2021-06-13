@@ -154,9 +154,9 @@ public class Nametags extends Module {
     private RCColor findTextColor(EntityPlayer entityPlayer) {
         ColorMain colorMain = ModuleManager.getModule(ColorMain.class);
         if (SocialManager.isFriend(entityPlayer.getName())) {
-            return colorMain.getFriendGSColor();
+            return colorMain.getFriendRCColor();
         } else if (SocialManager.isEnemy(entityPlayer.getName())) {
-            return colorMain.getEnemyGSColor();
+            return colorMain.getEnemyRCColor();
         } else if (entityPlayer.isInvisible()) {
             return new RCColor(128, 128, 128);
         } else if (mc.getConnection() != null && mc.getConnection().getPlayerInfo(entityPlayer.getUniqueID()) == null) {

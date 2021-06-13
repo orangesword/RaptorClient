@@ -42,9 +42,9 @@ public class Radar extends HUDModule {
 
     private Color getPlayerColor(EntityPlayer entityPlayer) {
         if (SocialManager.isFriend(entityPlayer.getName())) {
-            return new RCColor(ModuleManager.getModule(ColorMain.class).getFriendGSColor(), 255);
+            return new RCColor(ModuleManager.getModule(ColorMain.class).getFriendRCColor(), 255);
         } else if (SocialManager.isEnemy(entityPlayer.getName())) {
-            return new RCColor(ModuleManager.getModule(ColorMain.class).getEnemyGSColor(), 255);
+            return new RCColor(ModuleManager.getModule(ColorMain.class).getEnemyRCColor(), 255);
         } else {
             return new RCColor(playerColor.getValue(), 255);
         }

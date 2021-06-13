@@ -14,12 +14,12 @@ import com.raptordev.raptor.client.module.Module;
 public class AutoSpam extends Module {
 
     public static AutoSpam instance = new AutoSpam();
-
+    public static final List<String> spamMessages = new ArrayList<String>();
     public ModeSetting mode = registerMode("Mode", Arrays.asList("Everyone", "Me"), "Everyone");
     public IntegerSetting delay = registerInteger("Delay", 30, 10, 300);
     public IntegerSetting index = registerInteger("Message Number", 1,0,10);
 
-    public static final List<String> spamMessages = new ArrayList<String>();
+
     private final Timer timer = new Timer();
 
     public void onUpdate() {
@@ -29,7 +29,7 @@ public class AutoSpam extends Module {
         if (timer.getTimePassed() / 1000L >= delay.getValue().longValue()) {
             if (mode.getValue().equals("Everyone")) {
 
-                if (spamMessages.size() >= 1) {
+                if (spamMessages.size() >= index.getValue()) {
                     msg = spamMessages.get(index.getValue());
                 } else msg = "Download RaptorClient";
 

@@ -94,8 +94,8 @@ public class Bucked extends Module {
 
     private RCColor findGSColor(EntityPlayer entityPlayer) {
 
-        if (SocialManager.isFriend(entityPlayer.getName())) return ModuleManager.getModule(ColorMain.class).getFriendGSColor();
-        else if (SocialManager.isEnemy(entityPlayer.getName())) return ModuleManager.getModule(ColorMain.class).getEnemyGSColor();
+        if (SocialManager.isFriend(entityPlayer.getName())) return ModuleManager.getModule(ColorMain.class).getFriendRCColor();
+        else if (SocialManager.isEnemy(entityPlayer.getName())) return ModuleManager.getModule(ColorMain.class).getEnemyRCColor();
 
         return color.getValue();
     }

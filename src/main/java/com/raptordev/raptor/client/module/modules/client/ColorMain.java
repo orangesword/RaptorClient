@@ -41,11 +41,11 @@ public class ColorMain extends Module {
         return ColorUtil.settingToTextFormatting(chatDisableColor);
     }
 
-    public RCColor getFriendGSColor() {
+    public RCColor getFriendRCColor() {
         return new RCColor(ColorUtil.settingToColor(friendColor));
     }
 
-    public RCColor getEnemyGSColor() {
+    public RCColor getEnemyRCColor() {
         return new RCColor(ColorUtil.settingToColor(enemyColor));
     }
 }
