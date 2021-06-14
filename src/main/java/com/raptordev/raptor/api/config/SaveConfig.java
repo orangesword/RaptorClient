@@ -285,23 +285,23 @@ public class SaveConfig {
         fileOutputStreamWriter.close();
     }
 
-//    private static void saveAutoSpam() throws IOException {
-//
-//        registerFiles(miscName, "Spam");
-//
-//        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-//        OutputStreamWriter fileOutputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName + miscName + "AutoSpam" + ".json"), StandardCharsets.UTF_8);
-//        JsonObject mainObject = new JsonObject();
-//        JsonArray messageArray = new JsonArray();
-//
-//        for (String autoSpam : AutoSpam.spamMessages) {
-//            messageArray.add(autoSpam);
-//        }
-//        mainObject.add("Messages", messageArray);
-//        String jsonString = gson.toJson(new JsonParser().parse(mainObject.toString()));
-//        fileOutputStreamWriter.write(jsonString);
-//        fileOutputStreamWriter.close();
-//    }
+    private static void saveAutoSpam() throws IOException {
+
+        registerFiles(miscName, "Spam");
+
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        OutputStreamWriter fileOutputStreamWriter = new OutputStreamWriter(new FileOutputStream(fileName + miscName + "AutoSpam" + ".json"), StandardCharsets.UTF_8);
+        JsonObject mainObject = new JsonObject();
+        JsonArray messageArray = new JsonArray();
+
+        for (String autoSpam : AutoSpam.spamMessages) {
+            messageArray.add(autoSpam);
+        }
+        mainObject.add("Messages", messageArray);
+        String jsonString = gson.toJson(new JsonParser().parse(mainObject.toString()));
+        fileOutputStreamWriter.write(jsonString);
+        fileOutputStreamWriter.close();
+    }
 
     private static void saveAutoReply() throws IOException {
 

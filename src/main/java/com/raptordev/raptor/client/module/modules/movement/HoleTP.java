@@ -13,11 +13,6 @@ import net.minecraft.network.play.client.CPacketPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 
-/**
- * Edited by 0b00101010
- *
- * @since 25/01/21
- */
 
 @Module.Declaration(name = "HoleTP", category = Category.Movement)
 public class HoleTP extends Module {

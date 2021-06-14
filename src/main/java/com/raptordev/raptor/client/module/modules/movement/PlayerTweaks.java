@@ -19,10 +19,10 @@ import org.lwjgl.input.Keyboard;
 public class PlayerTweaks extends Module {
 
     public BooleanSetting guiMove = registerBoolean("Gui Move", false);
-    BooleanSetting noPush = registerBoolean("No Push", false);
-    BooleanSetting noFall = registerBoolean("No Fall", false);
+    public BooleanSetting noPush = registerBoolean("No Push", false);
+    public BooleanSetting noFall = registerBoolean("No Fall", false);
     public BooleanSetting noSlow = registerBoolean("No Slow", false);
-    BooleanSetting antiKnockBack = registerBoolean("Velocity", false);
+    public BooleanSetting antiKnockBack = registerBoolean("Velocity", false);
 
     public void onUpdate() {
         if (guiMove.getValue() && mc.currentScreen != null) {

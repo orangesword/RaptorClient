@@ -9,6 +9,7 @@ import com.raptordev.raptor.api.util.world.MotionUtil;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.mojang.realmsclient.gui.ChatFormatting;
+import com.raptordev.raptor.client.module.ModuleManager;
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
 import net.minecraft.block.BlockLiquid;
@@ -19,7 +20,7 @@ import java.util.Arrays;
 /**
  * @author Crystallinqq/Auto for original code
  * @source https://github.com/Crystallinqq/Mercury-Client/blob/master/src/main/java/fail/mercury/client/client/modules/movement/Speed.java
- * @reworked by Hoosiers on 11/1/2020
+ * @reworked by Hoosiers on 11/1/2020 for GS
  */
 
 @Module.Declaration(name = "Speed", category = Category.Movement)
@@ -41,6 +42,9 @@ public class Speed extends Module {
     public void onDisable() {
         timer.reset();
         EntityUtil.resetTimer();
+        if (ModuleManager.getModule(Strafe.class).isEnabled()) {
+            ModuleManager.getModule(Strafe.class).disable();
+        }
     }
 
     public void onUpdate() {

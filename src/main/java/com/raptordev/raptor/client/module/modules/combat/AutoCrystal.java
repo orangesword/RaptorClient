@@ -16,6 +16,7 @@ import com.raptordev.raptor.api.manager.managers.PlayerPacketManager;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;
+import com.raptordev.raptor.client.module.modules.client.BetterConfig;
 import com.raptordev.raptor.client.module.modules.misc.AutoGG;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import com.raptordev.raptor.api.util.world.combat.ac.*;
@@ -387,6 +388,14 @@ public class AutoCrystal extends Module {
 
     public void onEnable() {
         ACHelper.INSTANCE.onEnable();
+    }
+
+    public void onUpdate() {
+        if (!isAttacking) {
+            if (ModuleManager.getModule(BetterConfig.class).isEnabled() && ModuleManager.getModule(BetterConfig.class).disable.getValue()) {
+                ModuleManager.getModule(BetterConfig.class).enable();
+            }
+        }
     }
 
     public void onDisable() {

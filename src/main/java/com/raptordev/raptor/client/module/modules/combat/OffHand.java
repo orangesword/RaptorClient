@@ -10,6 +10,8 @@ import com.raptordev.raptor.api.util.world.combat.DamageUtil;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.mojang.realmsclient.gui.ChatFormatting;
+import com.raptordev.raptor.client.module.ModuleManager;
+import com.raptordev.raptor.client.module.modules.misc.AutoTotem;
 import net.minecraft.block.Block;
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.entity.Entity;
@@ -124,6 +126,7 @@ public class OffHand extends Module {
     public void onDisable() {
         activeT = false;
         forceObby = forceSkull = 0;
+        ModuleManager.getModule(AutoTotem.class).disable();
     }
 
     @Override

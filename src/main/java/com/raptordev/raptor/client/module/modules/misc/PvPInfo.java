@@ -31,7 +31,7 @@ public class PvPInfo extends Module {
     BooleanSetting burrowAlert = registerBoolean("Burrow Alert", false);
     BooleanSetting strengthDetect = registerBoolean("Strength Detect", false);
     BooleanSetting weaknessDetect = registerBoolean("Weakness Detect", false);
-    BooleanSetting popCounter = registerBoolean("Pop Counter", false);
+    public BooleanSetting popCounter = registerBoolean("Pop Counter", false);
     ModeSetting chatColor = registerMode("Color", ColorUtil.colors, "Light Purple");
 
     List<Entity> knownPlayers = new ArrayList<>();

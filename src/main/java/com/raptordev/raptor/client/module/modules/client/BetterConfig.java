@@ -16,7 +16,7 @@ public class BetterConfig extends Module {
 
     IntegerSetting delay = registerInteger("Timer", 300,60,600);
     BooleanSetting send = registerBoolean("SendMessage", true);
-    BooleanSetting disable = registerBoolean("CpvpDisable", false);
+    public BooleanSetting disable = registerBoolean("CpvpDisable", false);
 
     Timer timer = new Timer();
 
@@ -29,6 +29,8 @@ public class BetterConfig extends Module {
 
             if (disable.getValue() && ModuleManager.getModule(AutoCrystal.class).isAttacking) {
                 disable();
+                SaveConfig.init();
+                MessageBus.sendClientPrefixMessage("Saved Config last time Because of pvp");
             }
 
             timer.reset();

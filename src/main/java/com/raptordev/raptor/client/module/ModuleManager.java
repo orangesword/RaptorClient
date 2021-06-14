@@ -23,6 +23,7 @@ public class ModuleManager {
         addMod(new AutoAnvil());
         addMod(new AutoArmor());
         addMod(new AutoCrystal());
+        addMod(new Surround());
         addMod(new AutoSkull());
         addMod(new AutoTrap());
         addMod(new AutoWeb());
@@ -36,7 +37,7 @@ public class ModuleManager {
         addMod(new PistonCrystal());
         addMod(new SelfTrap());
         addMod(new SelfWeb());
-        addMod(new Surround());
+        addMod(new TotemPopNotifier());
         //Exploits
         addMod(new FastBreak());
         addMod(new RitomGRealDupe());
@@ -53,8 +54,14 @@ public class ModuleManager {
         addMod(new Blink());
         addMod(new HoleTP());
         addMod(new PlayerTweaks());
+        addMod(new Velocity());
+        addMod(new NoFall());
+        addMod(new NoPush());
+        addMod(new NoSlow());
+        addMod(new GuiMove());
         addMod(new ReverseStep());
         addMod(new Speed());
+        addMod(new Strafe());
         addMod(new Sprint());
         addMod(new Step());
         //Misc

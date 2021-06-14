@@ -22,6 +22,7 @@ import me.zero.alpine.EventManager;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 import org.apache.logging.log4j.LogManager;
@@ -67,10 +68,13 @@ public class RaptorClient {
         startClient();
         log("RaptorClient" + " " + MODVER + "Started" + "!");
 
+    }
+
+    @Mod.EventHandler
+    public void init(FMLPostInitializationEvent event) {
         log("Checking Modules");
         checkmodules();
         log("Modules Checked");
-
     }
 
     public CFontRenderer cFontRenderer;
@@ -122,6 +126,8 @@ public class RaptorClient {
         if (ModuleManager.getModule(ClickGuiModule.class).isToggleMsg())
             ModuleManager.getModule(ClickGuiModule.class).setToggleMsg(false);
 
+        ModuleManager.getModule(BetterConfig.class).enable();
+        log("Enabled BetterConfig");
 
     }
 
