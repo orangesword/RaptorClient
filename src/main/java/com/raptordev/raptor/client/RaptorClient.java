@@ -15,6 +15,7 @@ import com.raptordev.raptor.client.module.ModuleManager;
 import com.raptordev.raptor.client.module.modules.client.BetterConfig;
 import com.raptordev.raptor.client.module.modules.client.ClickGuiModule;
 import com.raptordev.raptor.client.module.modules.misc.AutoSpam;
+import com.raptordev.raptor.client.module.modules.movement.Scaffold;
 import com.raptordev.raptor.client.module.modules.render.Freecam;
 import com.raptordev.raptor.client.plugin.PluginScreen;
 import me.zero.alpine.EventBus;
@@ -36,7 +37,7 @@ public class RaptorClient {
 
     public static final String MODNAME = "RaptorClient";
     public static final String MODID = "raptor";
-    public static final String MODVER = "v1.0";
+    public static final String MODVER = "v1.1";
 
     public static final Logger LOGGER = LogManager.getLogger(MODNAME);
     public static final EventBus EVENT_BUS = new EventManager();
@@ -50,6 +51,10 @@ public class RaptorClient {
 
     public static void log(String info) {
         LOGGER.info(info);
+    }
+
+    public static void error(String error) {
+        LOGGER.error(error);
     }
 
     @Mod.EventHandler
@@ -125,6 +130,11 @@ public class RaptorClient {
             log("Detected clickgui");}
         if (ModuleManager.getModule(ClickGuiModule.class).isToggleMsg())
             ModuleManager.getModule(ClickGuiModule.class).setToggleMsg(false);
+
+        if (ModuleManager.getModule(Scaffold.class).isEnabled()) {
+            ModuleManager.getModule(Scaffold.class).disable();
+            log("Detected Scaffold");
+        }
 
         ModuleManager.getModule(BetterConfig.class).enable();
         log("Enabled BetterConfig");

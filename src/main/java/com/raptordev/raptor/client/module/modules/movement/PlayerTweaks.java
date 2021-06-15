@@ -6,6 +6,7 @@ import com.raptordev.raptor.api.event.events.WaterPushEvent;
 import com.raptordev.raptor.api.setting.values.BooleanSetting;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
+import com.raptordev.raptor.client.module.ModuleManager;
 import me.zero.alpine.listener.EventHandler;
 import me.zero.alpine.listener.Listener;
 import net.minecraft.client.gui.GuiChat;
@@ -46,6 +47,12 @@ public class PlayerTweaks extends Module {
                     mc.player.rotationPitch = -90;
                 }
             }
+        }
+    }
+
+    protected void onDisable() {
+        if (ModuleManager.getModule(GuiMove.class).isEnabled()) {
+            ModuleManager.getModule(GuiMove.class).disable();
         }
     }
 

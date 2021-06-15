@@ -48,6 +48,7 @@ public class ModuleManager {
         addMod(new PacketUse());
         addMod(new NewChunks());
         addMod(new PacketXP());
+        addMod(new FastUtil());
         addMod(new PortalGodmode());
         //Movement
         addMod(new Anchor());
@@ -64,6 +65,7 @@ public class ModuleManager {
         addMod(new Strafe());
         addMod(new Sprint());
         addMod(new Step());
+        addMod(new Scaffold());
         //Misc
         addMod(new Announcer());
         addMod(new AutoGear());

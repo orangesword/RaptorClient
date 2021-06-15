@@ -38,7 +38,6 @@ public class LoadConfig {
         try {
             loadModules();
             loadEnabledModules();
-            loadAutoSpam();
             loadModuleKeybinds();
             loadDrawnModules();
             loadToggleMessageModules();

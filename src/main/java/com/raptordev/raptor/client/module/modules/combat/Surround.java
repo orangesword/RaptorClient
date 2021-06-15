@@ -31,7 +31,7 @@ public class Surround extends Module {
     IntegerSetting delayTicks = registerInteger("Tick Delay", 3, 0, 10);
     IntegerSetting blocksPerTick = registerInteger("Blocks Per Tick", 4, 0, 8);
     BooleanSetting rotate = registerBoolean("Rotate", true);
-    BooleanSetting centerPlayer = registerBoolean("Center Player", false);
+    BooleanSetting centerPlayer = registerBoolean("Center Player", true);
     BooleanSetting sneakOnly = registerBoolean("Sneak Only", false);
     BooleanSetting disableNoBlock = registerBoolean("Disable No Obby", true);
     BooleanSetting offhandObby = registerBoolean("Offhand Obby", false);

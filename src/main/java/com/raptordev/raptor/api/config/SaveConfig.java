@@ -49,7 +49,6 @@ public class SaveConfig {
             saveEnemiesList();
             saveClickGUIPositions();
             saveAutoGG();
-            saveAutoSpam();
             saveAutoReply();
             saveAutoRespawn();
         } catch (IOException e) {

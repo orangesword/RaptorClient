@@ -18,6 +18,18 @@ public class Timer {
         return System.currentTimeMillis() - this.current >= delay;
     }
 
+    public boolean hasPassedS(final long time) {
+        reset();
+        if (getTimePassed()/1000L<= time) return true;
+        else return false;
+    }
+
+    public boolean hasPassedM(final long time) {
+        reset();
+        if (getTimePassed()/10000L<= time) return true;
+        else return false;
+    }
+
     public void reset() {
         this.current = System.currentTimeMillis();
     }
