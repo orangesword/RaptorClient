@@ -6,6 +6,7 @@
   "refmap": "mixins.raptor.refmap.json",
   "mixins": [
     "MixinAbstractClientPlayer",
+    "MixinAbstractEnity",
     "MixinBlockLiquid",
     "MixinBlockSoulSand",
     "MixinEntity",

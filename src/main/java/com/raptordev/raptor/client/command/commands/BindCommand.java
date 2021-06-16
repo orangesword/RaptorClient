@@ -6,11 +6,8 @@ import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;
 import org.lwjgl.input.Keyboard;
 
-/**
- * @Author Hoosiers on 11/05/2020
- */
 
-@Command.Declaration(name = "Bind", syntax = "bind [module] key", alias = {"bind", "b", "setbind", "key"})
+@Command.Declaration(name = "Bind", syntax = "bind [module] key", alias = {"bind", "setbind", "key"})
 public class BindCommand extends Command {
 
     public void onCommand(String command, String[] message) {

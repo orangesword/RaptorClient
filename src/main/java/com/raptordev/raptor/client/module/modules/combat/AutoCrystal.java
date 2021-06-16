@@ -17,6 +17,7 @@ import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;
 import com.raptordev.raptor.client.module.modules.client.BetterConfig;
+import com.raptordev.raptor.client.module.modules.misc.AutoEzz;
 import com.raptordev.raptor.client.module.modules.misc.AutoGG;
 import com.mojang.realmsclient.gui.ChatFormatting;
 import com.raptordev.raptor.api.util.world.combat.ac.*;
@@ -302,6 +303,10 @@ public class AutoCrystal extends Module {
 
             if (ModuleManager.isModuleEnabled(AutoGG.class)) {
                 AutoGG.INSTANCE.addTargetedPlayer(renderEntity.getName());
+            }
+
+            if (ModuleManager.isModuleEnabled(AutoEzz.class)) {
+                AutoEzz.instance.addTargetedPlayer(renderEntity.getName());
             }
 
             return true;

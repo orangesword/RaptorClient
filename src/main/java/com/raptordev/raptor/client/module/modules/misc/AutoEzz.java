@@ -21,6 +21,7 @@ import java.util.concurrent.ConcurrentHashMap;
 @Module.Declaration(name = "Autoezz", category = Category.Misc, Description = "Just like auto ezz but only for cool people")
 public class AutoEzz extends Module {
 
+    public static AutoEzz instance = new AutoEzz();
     static List<String> AutoezzMessages = new ArrayList<>();
     private ConcurrentHashMap targetedPlayers = null;
     int index = -1;

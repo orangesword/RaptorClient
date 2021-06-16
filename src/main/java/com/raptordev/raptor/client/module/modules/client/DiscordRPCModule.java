@@ -1,6 +1,7 @@
-package com.raptordev.raptor.client.module.modules.misc;
+package com.raptordev.raptor.client.module.modules.client;
 
 import com.raptordev.raptor.api.manager.managers.DiscordManager;
+import com.raptordev.raptor.api.util.misc.MessageBus;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 
@@ -9,7 +10,8 @@ public class DiscordRPCModule extends Module {
 
     public void onEnable() {
 
-        DiscordManager.stopRPC();
+        MessageBus.sendClientPrefixMessage("Discord RPC is already Enabled and its automatic");
+
     }
 
     public void onDisable() {

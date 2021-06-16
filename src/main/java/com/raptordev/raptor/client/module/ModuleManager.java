@@ -66,6 +66,8 @@ public class ModuleManager {
         addMod(new Sprint());
         addMod(new Step());
         addMod(new Scaffold());
+        addMod(new Elytrafly());
+        addMod(new Flight());
         //Misc
         addMod(new Announcer());
         addMod(new AutoGear());

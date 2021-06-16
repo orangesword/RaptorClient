@@ -46,6 +46,11 @@ public class Timer {
         return false;
     }
 
+    public void resetTimeSkipTo(long p_MS)
+    {
+        this.current = System.currentTimeMillis() + p_MS;
+    }
+
     public long time() {
         return System.currentTimeMillis() - current;
     }

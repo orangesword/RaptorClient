@@ -160,7 +160,7 @@ public enum ClientEventManager implements Manager {
         if (event.isCanceled()) return;
         if (getMinecraft().player == null || getMinecraft().world == null) return;
 
-        getProfiler().startSection("gamesense");
+        getProfiler().startSection("raptor");
         getProfiler().startSection("setup");
         RenderUtil.prepare();
         RenderEvent event1 = new RenderEvent(event.getPartialTicks());
