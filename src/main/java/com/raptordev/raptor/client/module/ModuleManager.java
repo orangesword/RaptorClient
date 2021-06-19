@@ -67,6 +67,7 @@ public class ModuleManager {
         addMod(new Step());
         addMod(new Scaffold());
         addMod(new Elytrafly());
+        addMod(new AntiHunger());
         addMod(new Flight());
         //Misc
         addMod(new Announcer());
@@ -136,6 +137,7 @@ public class ModuleManager {
         addMod(new ColorMain());
         addMod(new HUDEditor());
         addMod(new ToggleMessage());
+        addMod(new Console());
         addMod(new BetterConfig());
     }
 

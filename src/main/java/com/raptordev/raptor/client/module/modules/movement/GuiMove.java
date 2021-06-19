@@ -3,8 +3,6 @@ package com.raptordev.raptor.client.module.modules.movement;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;
-import net.minecraft.client.gui.GuiChat;
-import org.lwjgl.input.Keyboard;
 
 @Module.Declaration(name = "GuiMove", category = Category.Movement)
 public class GuiMove extends Module {

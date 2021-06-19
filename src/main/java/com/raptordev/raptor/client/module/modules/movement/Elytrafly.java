@@ -27,7 +27,7 @@ import net.minecraft.network.play.client.CPacketPlayer;
 
 import java.util.Arrays;
 
-@Module.Declaration(name ="Elytrafly", category = Category.Movement, Description = "Fly with elytra automatically")
+@Module.Declaration(name ="Elytrafly", category = Category.Movement, Description = "Fly with elytra automatically", priority = 100)
 public class Elytrafly extends Module {
 
     public ModeSetting mode = registerMode("Mode", Arrays.asList("Normal", "Tarzan", "Superior", "Packet", "Control"),"Normal");
@@ -38,13 +38,12 @@ public class Elytrafly extends Module {
     public BooleanSetting Accelerate = registerBoolean("Accelerate", true);
     public IntegerSetting vAccelerationTimer = registerInteger("Timer",1000, 0, 10000);
     public DoubleSetting RotationPitch = registerDouble("RotationPitch", 10, -90, 90);
-    public BooleanSetting CancelInWater = registerBoolean("CancelInWater", true);
+    public BooleanSetting CancelInWater = registerBoolean("CancelInWater", false);
     public IntegerSetting CancelAtHeight = registerInteger("CancelAtHeight", 5, 0, 10);
     public BooleanSetting InstantFly = registerBoolean("InstantFly", true);
     public BooleanSetting EquipElytra = registerBoolean("EquipElytra", false);
     public BooleanSetting PitchSpoof = registerBoolean("PitchSpoof", false);
 
-    private Timer PacketTimer = new Timer();
     private Timer AccelerationTimer = new Timer();
     private Timer AccelerationResetTimer = new Timer();
     private Timer InstantFlyTimer = new Timer();
@@ -74,7 +73,6 @@ public class Elytrafly extends Module {
                         continue;
 
                     ItemElytra l_Elytra = (ItemElytra)l_Stack.getItem();
-
                     ElytraSlot = l_I;
                     break;
                 }

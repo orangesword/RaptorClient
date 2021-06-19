@@ -31,4 +31,15 @@ public class FontUtil {
             return mc.fontRenderer.FONT_HEIGHT;
         }
     }
+
+    public static String trimStringToWidth(String substring, int width)
+    {
+        return mc.fontRenderer.trimStringToWidth(substring, width);
+    }
+
+    public static String trimStringToWidth(String text, int j, boolean b)
+    {
+        return mc.fontRenderer.trimStringToWidth(text, j, b);
+    }
+
 }

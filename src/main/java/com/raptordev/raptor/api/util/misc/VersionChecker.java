@@ -52,7 +52,7 @@ public class VersionChecker {
         Font font = label.getFont();
 
         String style = "font-family:" + font.getFamily() + ";" + "font-weight:" + (font.isBold() ? "bold" : "normal") + ";" + "font-size:" + font.getSize() + "pt;";
-        JEditorPane editorPane = new JEditorPane("text/html", "<html><body style=\"" + style + "\">" + "Version outdated! Download the latest (" + newVersion + ") " + "<a href=\"https://github.com/RaptorClientDevelopment/RaptorAssets/releases\">HERE</a>" + "!" + "</body></html>");
+        JEditorPane editorPane = new JEditorPane("text/html", "<html><body style=\"" + style + "\">" + "Version outdated! Download the latest (" + newVersion + ") " + "<a href=\"https://github.com/RaptorClientDevelopment/RaptorClient/releases\">HERE</a>" + "!" + "</body></html>");
 
         editorPane.addHyperlinkListener(new HyperlinkListener() {
 
