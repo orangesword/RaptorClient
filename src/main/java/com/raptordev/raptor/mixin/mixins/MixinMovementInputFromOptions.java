@@ -1,7 +1,7 @@
 package com.raptordev.raptor.mixin.mixins;
 
 import com.raptordev.raptor.client.module.ModuleManager;
-import com.raptordev.raptor.client.module.modules.movement.PlayerTweaks;
+import com.raptordev.raptor.client.module.modules.movement.GuiMove;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiChat;
 import net.minecraft.client.settings.KeyBinding;
@@ -20,9 +20,9 @@ public abstract class MixinMovementInputFromOptions extends MovementInput {
         int keyCode = keyBinding.getKeyCode();
 
         if (keyCode > 0 && keyCode < Keyboard.KEYBOARD_SIZE) {
-            PlayerTweaks playerTweaks = ModuleManager.getModule(PlayerTweaks.class);
+            GuiMove module = ModuleManager.getModule(GuiMove.class);
 
-            if (playerTweaks.isEnabled() && playerTweaks.guiMove.getValue()
+            if (module.isEnabled()
                 && Minecraft.getMinecraft().currentScreen != null
                 && !(Minecraft.getMinecraft().currentScreen instanceof GuiChat)) {
                 return Keyboard.isKeyDown(keyCode);

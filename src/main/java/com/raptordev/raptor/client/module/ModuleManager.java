@@ -16,7 +16,7 @@ import java.util.Locale;
 public class ModuleManager {
     private static final LinkedHashMap<Class<? extends Module>, Module> modulesClassMap = new LinkedHashMap<>();
     private static final LinkedHashMap<String, Module> modulesNameMap = new LinkedHashMap<>();
-
+    
     public static void init() {
         //Combat
         addMod(new AntiCrystal());
@@ -54,7 +54,6 @@ public class ModuleManager {
         addMod(new Anchor());
         addMod(new Blink());
         addMod(new HoleTP());
-        addMod(new PlayerTweaks());
         addMod(new Velocity());
         addMod(new NoFall());
         addMod(new NoPush());
@@ -69,6 +68,7 @@ public class ModuleManager {
         addMod(new Elytrafly());
         addMod(new AntiHunger());
         addMod(new Flight());
+        addMod(new Jesus());
         //Misc
         addMod(new Announcer());
         addMod(new AutoGear());
@@ -94,6 +94,9 @@ public class ModuleManager {
         addMod(new XCarry());
         addMod(new AutoTotem());
         addMod(new AutoSpam());
+        addMod(new AntiAfk());
+        addMod(new AutoLog());
+        addMod(new AutoReconnet());
 
         //Render
         addMod(new BlockHighlight());
@@ -139,16 +142,19 @@ public class ModuleManager {
         addMod(new ToggleMessage());
         addMod(new Console());
         addMod(new BetterConfig());
+        addMod(new Drawn());
+      
+        
     }
 
     public static void addMod(Module module) {
         modulesClassMap.put(module.getClass(), module);
         modulesNameMap.put(module.getName().toLowerCase(Locale.ROOT), module);
     }
-
     public static Collection<Module> getModules() {
         return modulesClassMap.values();
     }
+    
 
     public static ArrayList<Module> getModulesInCategory(Category category) {
         ArrayList<Module> list = new ArrayList<>();

@@ -40,6 +40,8 @@ public abstract class Module implements Toggleable, KeybindSetting {
         boolean drawn() default true;
 
         boolean toggleMsg() default true;
+
+        boolean alwaysEnabled() default false;
     }
 
     private final String name = getDeclaration().name();
@@ -50,6 +52,7 @@ public abstract class Module implements Toggleable, KeybindSetting {
     private boolean enabled = getDeclaration().enabled();
     private boolean drawn = getDeclaration().drawn();
     private boolean toggleMsg = getDeclaration().toggleMsg();
+    private boolean alwaysEnabled = getDeclaration().alwaysEnabled();
 
     private Declaration getDeclaration() {
         return getClass().getAnnotation(Declaration.class);
@@ -100,6 +103,10 @@ public abstract class Module implements Toggleable, KeybindSetting {
         setEnabled(false);
         RaptorClient.EVENT_BUS.unsubscribe(this);
         onDisable();
+        if (alwaysEnabled) {
+            enable();
+            setDisabledMessage("This is a always enabled module you can't turn this off");
+        }
         if (toggleMsg && mc.player != null) MessageBus.sendClientPrefixMessage(ModuleManager.getModule(ColorMain.class).getDisabledColor() + disabledMessage);
         setDisabledMessage(name + " turned OFF!");
     }
@@ -155,13 +162,18 @@ public abstract class Module implements Toggleable, KeybindSetting {
         this.drawn = drawn;
     }
 
-    public boolean isToggleMsg() {
-
-        return this.toggleMsg;
-    }
+    public boolean isToggleMsg() { return this.toggleMsg;}
 
     public void setToggleMsg(boolean toggleMsg) {
         this.toggleMsg = toggleMsg;
+    }
+
+    public boolean isAlwaysEnabled() {
+        return alwaysEnabled;
+    }
+
+    public void setAlwaysEnabled(boolean alwaysEnabled) {
+        this.alwaysEnabled = alwaysEnabled;
     }
 
     protected IntegerSetting registerInteger(String name, int value, int min, int max) {

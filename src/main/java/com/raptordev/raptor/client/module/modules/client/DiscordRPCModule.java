@@ -5,16 +5,6 @@ import com.raptordev.raptor.api.util.misc.MessageBus;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 
-@Module.Declaration(name = "DiscordRPC", category = Category.CLIENT, drawn = false)
+@Module.Declaration(name = "DiscordRPC", category = Category.CLIENT, drawn = false, alwaysEnabled = true)
 public class DiscordRPCModule extends Module {
-
-    public void onEnable() {
-
-        MessageBus.sendClientPrefixMessage("Discord RPC is already Enabled and its automatic");
-
-    }
-
-    public void onDisable() {
-        DiscordManager.startRPC();
-    }
 }

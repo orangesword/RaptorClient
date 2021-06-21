@@ -126,7 +126,10 @@ public class OffHand extends Module {
     public void onDisable() {
         activeT = false;
         forceObby = forceSkull = 0;
-        ModuleManager.getModule(AutoTotem.class).disable();
+        if (ModuleManager.getModule(AutoTotem.class).isEnabled()) {
+        	ModuleManager.getModule(AutoTotem.class).disable();
+		}
+        
     }
 
     @Override

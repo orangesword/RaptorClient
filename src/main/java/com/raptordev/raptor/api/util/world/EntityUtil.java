@@ -6,6 +6,7 @@ import net.minecraft.block.BlockAir;
 import net.minecraft.block.BlockLiquid;
 import net.minecraft.client.Minecraft;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
@@ -174,4 +175,48 @@ public class EntityUtil {
         }
         return blocks;
     }
+    
+    public static boolean isPlayer(Entity entity) {
+        return entity instanceof EntityPlayer;
+    }
+    
+    public static boolean isAboveWater(Entity entity, boolean packet) {
+        if (entity == null) return false;
+
+        double y = entity.posY - (packet ? 0.03 : (EntityUtil.isPlayer(entity) ? 0.2 : 0.5)); // increasing this seems to flag more in NCP but needs to be increased so the player lands on solid water
+
+        for(int x = MathHelper.floor(entity.posX); x < MathHelper.ceil(entity.posX); x++)
+            for (int z = MathHelper.floor(entity.posZ); z < MathHelper.ceil(entity.posZ); z++) {
+                BlockPos pos = new BlockPos(x, MathHelper.floor(y), z);
+
+                if (mc.world.getBlockState(pos).getBlock() instanceof BlockLiquid) return true;
+            }
+
+        return false;
+    }
+    
+    @SuppressWarnings("deprecation")
+    public static boolean isAboveLand(Entity entity) {
+        if (entity == null) return false;
+
+        double y = entity.posY - 0.01;
+
+        for(int x = MathHelper.floor(entity.posX); x < MathHelper.ceil(entity.posX); x++)
+            for (int z = MathHelper.floor(entity.posZ); z < MathHelper.ceil(entity.posZ); z++) {
+                BlockPos pos = new BlockPos(x, MathHelper.floor(y), z);
+
+                if (mc.world.getBlockState(pos).getBlock().isFullBlock(mc.world.getBlockState(pos))) return true;
+            }
+
+        return false;
+    }
+
+    private static boolean isAboveBlock(Entity entity, BlockPos pos) {
+        return entity.posY  >= pos.getY();
+    }
+
+    public static boolean checkCollide() {
+        return !EntityUtil.mc.player.isSneaking() && (EntityUtil.mc.player.getRidingEntity() == null || EntityUtil.mc.player.getRidingEntity().fallDistance < 3.0f) && EntityUtil.mc.player.fallDistance < 3.0f;
+    }
+
 }

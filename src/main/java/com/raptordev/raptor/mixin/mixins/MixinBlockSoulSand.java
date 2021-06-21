@@ -1,7 +1,7 @@
 package com.raptordev.raptor.mixin.mixins;
 
 import com.raptordev.raptor.client.module.ModuleManager;
-import com.raptordev.raptor.client.module.modules.movement.PlayerTweaks;
+import com.raptordev.raptor.client.module.modules.movement.NoSlow;
 import net.minecraft.block.BlockSoulSand;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -17,9 +17,9 @@ public class MixinBlockSoulSand {
 
     @Inject(method = "onEntityCollision", at = @At("HEAD"), cancellable = true)
     public void onEntityCollidedWithBlock(World worldIn, BlockPos pos, IBlockState state, Entity entityIn, CallbackInfo callbackInfo) {
-        PlayerTweaks playerTweaks = ModuleManager.getModule(PlayerTweaks.class);
+        NoSlow module = ModuleManager.getModule(NoSlow.class);
 
-        if (playerTweaks.isEnabled() && playerTweaks.noSlow.getValue()) {
+        if (module.isEnabled()) {
             callbackInfo.cancel();
         }
     }

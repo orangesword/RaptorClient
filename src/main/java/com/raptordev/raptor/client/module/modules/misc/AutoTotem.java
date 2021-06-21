@@ -28,8 +28,10 @@ public class AutoTotem extends Module {
     }
 
     protected void onDisable() {
-        offHand.disable();
-        offHand.setToggleMsg(offHand.isToggleMsg());
+    	if (offHand.isEnabled()) {
+            offHand.disable();
+		}
+
 
         offHand.nonDefaultItem.setValue(offHand.nonDefaultItem.getValue());
         offHand.defaultItem.setValue(offHand.defaultItem.getValue());

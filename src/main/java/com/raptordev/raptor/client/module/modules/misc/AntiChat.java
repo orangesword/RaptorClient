@@ -11,7 +11,7 @@ import me.zero.alpine.listener.Listener;
 import net.minecraft.network.play.server.SPacketChat;
 import net.minecraft.util.text.TextComponentString;
 
-@Module.Declaration(name = "Anti for Chat", category = Category.Misc)
+@Module.Declaration(name = "ChatUtils", category = Category.Misc)
 public class AntiChat extends Module {
 
     BooleanSetting AntiDiscord = registerBoolean("Anti Discord", true);

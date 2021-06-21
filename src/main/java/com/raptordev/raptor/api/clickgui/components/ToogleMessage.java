@@ -11,7 +11,7 @@ public class ToogleMessage extends FocusableComponent {
     protected final Module module;
 
     public ToogleMessage(Renderer renderer, Module module) {
-        super("Toggle Msgs", null, renderer);
+        super("Toggle Msgs", "OnEnable/Disable it will send chat message", renderer);
         this.module = module;
     }
 

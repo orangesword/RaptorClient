@@ -1,4 +1,4 @@
-package com.raptordev.raptor.api.clickgui.components;
+package com.raptordev.raptor.api.clickgui.components.theme;
 
 import java.awt.Color;
 import java.awt.Dimension;

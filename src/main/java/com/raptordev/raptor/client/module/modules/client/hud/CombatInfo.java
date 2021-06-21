@@ -120,7 +120,7 @@ public class CombatInfo extends HUDModule {
                 if (ModuleManager.isModuleEnabled(RitomGsRaptor[index])) return RitomGs[index] + ": ON";
                 else return RitomGs[index] + ": OFF";
             } else if (infoType.getValue().equals("GamseSense")) {
-                if (index == 0) return "raptor.cc";
+                if (index == 0) return "RaptorClient.cc";
                 else if (index == 1) return "HTR";
                 else if (index == 2) return "PLR";
                 else if (index == 3) return "" + totems;

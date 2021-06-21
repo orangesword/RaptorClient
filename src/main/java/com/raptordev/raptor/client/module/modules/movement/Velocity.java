@@ -12,8 +12,6 @@ import net.minecraft.network.play.server.SPacketExplosion;
 @Module.Declaration(name = "Velocity", category = Category.Movement)
 public class Velocity extends Module {
 
-    PlayerTweaks module = ModuleManager.getModule(PlayerTweaks.class);
-
     public void onUpdate() {
 
     }

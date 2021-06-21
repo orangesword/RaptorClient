@@ -136,8 +136,11 @@ public class RaptorClient {
             log("Detected Scaffold");
         }
 
-        ModuleManager.getModule(BetterConfig.class).enable();
-        log("Enabled BetterConfig");
+        ModuleManager.getModules().forEach(Module -> {
+            if (Module.isAlwaysEnabled()) {
+                Module.enable();
+            }
+        });
 
     }
 

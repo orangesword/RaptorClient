@@ -1,6 +1,9 @@
 package com.raptordev.raptor.api.clickgui;
 
 import com.raptordev.raptor.api.clickgui.components.*;
+import com.raptordev.raptor.api.clickgui.components.theme.GamesenseTheme;
+import com.raptordev.raptor.api.clickgui.components.theme.RainbowTheme;
+import com.raptordev.raptor.api.clickgui.components.theme.RaptorClientTheme;
 import com.raptordev.raptor.api.setting.Setting;
 import com.raptordev.raptor.api.setting.SettingsManager;
 import com.raptordev.raptor.api.setting.values.*;
@@ -36,29 +39,56 @@ import java.awt.*;
 
 public class RaptorClientGui extends MinecraftHUDGUI {
 
-    public static final int WIDTH = 85, HEIGHT = 12, DISTANCE = 5, HUD_BORDER = 2;
+    public ClickGuiModule clickGuiModule = ModuleManager.getModule(ClickGuiModule.class);
+    public ColorMain colorMain = ModuleManager.getModule(ColorMain.class);
+    public static int WIDTH = 85;
+    public static final int HEIGHT = 12;
+    public static final int DISTANCE = 5;
+    public static final int HUD_BORDER = 2;
     private final Toggleable colorToggle;
     public final GUIInterface guiInterface;
     public final HUDClickGUI gui;
-    private final Theme theme, gamesenseTheme,raptorclientTheme, clearTheme, clearGradientTheme;
+    private final Theme theme, gamesenseTheme,raptorclientTheme, clearTheme, clearGradientTheme, rainbowtheme;
 
     public RaptorClientGui() {
-        ClickGuiModule clickGuiModule = ModuleManager.getModule(ClickGuiModule.class);
-        ColorMain colorMain = ModuleManager.getModule(ColorMain.class);
         ColorScheme scheme = new SettingsColorScheme(clickGuiModule.enabledColor, clickGuiModule.backgroundColor, clickGuiModule.settingBackgroundColor, clickGuiModule.outlineColor, clickGuiModule.fontColor, clickGuiModule.opacity);
         gamesenseTheme = new GamesenseTheme(scheme, HEIGHT, 2, 5);
         raptorclientTheme = new RaptorClientTheme(scheme, HEIGHT, 2);
         clearTheme = new ClearTheme(scheme, false, HEIGHT, 1);
         clearGradientTheme = new ClearTheme(scheme, true, HEIGHT, 1);
+        rainbowtheme = new RainbowTheme(scheme,  HEIGHT,()->!clickGuiModule.ignoreDisabled.getValue(), ()->clickGuiModule.buttonRainbow.getValue());
         theme = new ThemeMultiplexer() {
             @Override
             protected Theme getTheme() {
-                if (clickGuiModule.theme.getValue().equals("2.0")) return clearTheme;
-                else if (clickGuiModule.theme.getValue().equals("2.1.2")) return clearGradientTheme;
-                else if (clickGuiModule.theme.getValue().equals("2.2"))return gamesenseTheme;
-                else return raptorclientTheme;
+                switch (clickGuiModule.theme.getValue()) {
+                    case "ClearTheme":
+                        return clearTheme;
+                    case "ClearGradientTheme":
+                        return clearGradientTheme;
+                    case "GamesenseTheme":
+                        return gamesenseTheme;
+                    case "RaptorTheme":
+                        return rainbowtheme;
+                    case "BigTheme":
+                        return clearTheme;
+                    default:
+                        return raptorclientTheme;
+                }
             }
         };
+
+        switch (clickGuiModule.theme.getValue()) {
+            case "RaptorTheme":
+                WIDTH = 90;
+                break;
+            case "GamesenseTheme":
+                WIDTH = 100;
+                break;
+            case "BigTheme":
+                WIDTH = 110;
+                break;
+        }
+
         colorToggle = new Toggleable() {
             @Override
             public void toggle() {
@@ -125,7 +155,7 @@ public class RaptorClientGui extends MinecraftHUDGUI {
         };
 
         for (Module module : ModuleManager.getModules()) {
-            if (module instanceof HUDModule && clickGuiModule.showHUDc.getValue()) {
+            if (module instanceof HUDModule) {
                 ((HUDModule) module).populate(theme);
                 gui.addHUDComponent(new HUDPanel(((HUDModule) module).getComponent(), theme.getPanelRenderer(), module, new SettingsAnimation(clickGuiModule.animationSpeed), hudToggle, HUD_BORDER));
             }
