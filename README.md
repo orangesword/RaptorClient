@@ -4,7 +4,7 @@
 
 <!-- PROJECT SHIELDS -->
 [![version](https://img.shields.io/badge/Release-1.2-green.svg)](https://github.com/RaptorClientDevelopment/RaptorClient/releases/latest)
-[![version](https://img.shields.io/badge/Dev-1.2-orange.svg)](https://github.com/RaptorClientDevelopment/RaptorClientreleases/latest)
+[![version](https://img.shields.io/badge/Dev-1.3-orange.svg)](https://github.com/RaptorClientDevelopment/RaptorClientreleases/latest)
 [![discord](https://img.shields.io/badge/Discord-hzzEmtke2M-8080c0)](https://discord.gg/hzzEmtke2M)
 ![GitHub All Releases](https://img.shields.io/github/downloads/RaptorClientDevelopment/RaptorClient/total)
 ![minecraft](https://img.shields.io/badge/Minecraft-1.12.2-blue.svg)
