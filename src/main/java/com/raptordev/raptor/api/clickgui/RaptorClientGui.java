@@ -51,6 +51,7 @@ public class RaptorClientGui extends MinecraftHUDGUI {
     private final Theme theme, gamesenseTheme,raptorclientTheme, clearTheme, clearGradientTheme, rainbowtheme;
 
     public RaptorClientGui() {
+        WIDTH = getWIDTH();
         ColorScheme scheme = new SettingsColorScheme(clickGuiModule.enabledColor, clickGuiModule.backgroundColor, clickGuiModule.settingBackgroundColor, clickGuiModule.outlineColor, clickGuiModule.fontColor, clickGuiModule.opacity);
         gamesenseTheme = new GamesenseTheme(scheme, HEIGHT, 2, 5);
         raptorclientTheme = new RaptorClientTheme(scheme, HEIGHT, 2);
@@ -76,18 +77,6 @@ public class RaptorClientGui extends MinecraftHUDGUI {
                 }
             }
         };
-
-        switch (clickGuiModule.theme.getValue()) {
-            case "RaptorTheme":
-                WIDTH = 90;
-                break;
-            case "GamesenseTheme":
-                WIDTH = 100;
-                break;
-            case "BigTheme":
-                WIDTH = 110;
-                break;
-        }
 
         colorToggle = new Toggleable() {
             @Override
@@ -241,6 +230,19 @@ public class RaptorClientGui extends MinecraftHUDGUI {
         GlStateManager.disableDepth();
         GlStateManager.depthMask(false);
         GLInterface.begin();
+    }
+
+    public int getWIDTH() {
+        switch (clickGuiModule.theme.getValue()) {
+            case "RaptorTheme":
+                return  90;
+            case "GamesenseTheme":
+                return  100;
+            case "BigTheme":
+                return  110;
+            default:
+                return 120;
+        }
     }
 
     @Override

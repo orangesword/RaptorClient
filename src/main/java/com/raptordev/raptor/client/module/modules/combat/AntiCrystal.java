@@ -5,7 +5,7 @@ import com.raptordev.raptor.api.setting.values.DoubleSetting;
 import com.raptordev.raptor.api.setting.values.IntegerSetting;
 import com.raptordev.raptor.api.setting.values.ModeSetting;
 import com.raptordev.raptor.api.util.world.BlockUtil;
-import com.raptordev.raptor.api.util.world.combat.DamageUtil;
+import com.raptordev.raptor.api.util.combat.DamageUtil;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;
@@ -138,10 +138,10 @@ public class AntiCrystal extends Module {
     }
 
     public boolean usCrystal(Entity crystal) {
-        AutoCrystal autoCrystal = ModuleManager.getModule(AutoCrystal.class);
+        RCCrystalAura RCCrystalAura = ModuleManager.getModule(RCCrystalAura.class);
 
-        if (ModuleManager.isModuleEnabled(AutoCrystal.class)) {
-            return autoCrystal.targets.stream().filter(placeInfo -> placeInfo.crystal.equals(new BlockPos((int) crystal.posX, crystal.posY - 1, (int) crystal.posZ))).findFirst().orElse(null) != null;
+        if (ModuleManager.isModuleEnabled(RCCrystalAura.class)) {
+            return RCCrystalAura.targets.stream().filter(placeInfo -> placeInfo.crystal.equals(new BlockPos((int) crystal.posX, crystal.posY - 1, (int) crystal.posZ))).findFirst().orElse(null) != null;
         }
         else return false;
     }
@@ -182,8 +182,8 @@ public class AntiCrystal extends Module {
 
         boolean stoppedAC = false;
 
-        if (ModuleManager.isModuleEnabled(AutoCrystal.class)) {
-            AutoCrystal.stopAC = true;
+        if (ModuleManager.isModuleEnabled(RCCrystalAura.class)) {
+            RCCrystalAura.stopAC = true;
             stoppedAC = true;
         }
 
@@ -213,7 +213,7 @@ public class AntiCrystal extends Module {
         }
 
         if (stoppedAC) {
-            AutoCrystal.stopAC = false;
+            RCCrystalAura.stopAC = false;
             stoppedAC = false;
         }
 

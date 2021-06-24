@@ -2,7 +2,7 @@ package com.raptordev.raptor.api.util.player;
 
 import com.raptordev.raptor.api.util.world.BlockUtil;
 import com.raptordev.raptor.client.module.ModuleManager;
-import com.raptordev.raptor.client.module.modules.combat.AutoCrystal;
+import com.raptordev.raptor.client.module.modules.combat.RCCrystalAura;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.entity.EntityPlayerSP;
@@ -114,8 +114,8 @@ public class PlacementUtil {
 
         boolean stoppedAC = false;
 
-        if (ModuleManager.isModuleEnabled(AutoCrystal.class)) {
-            AutoCrystal.stopAC = true;
+        if (ModuleManager.isModuleEnabled(RCCrystalAura.class)) {
+            RCCrystalAura.stopAC = true;
             stoppedAC = true;
         }
 
@@ -130,7 +130,7 @@ public class PlacementUtil {
         }
 
         if (stoppedAC) {
-            AutoCrystal.stopAC = false;
+            RCCrystalAura.stopAC = false;
         }
 
         return action == EnumActionResult.SUCCESS;
@@ -170,8 +170,8 @@ public class PlacementUtil {
 
         boolean stoppedAC = false;
 
-        if (ModuleManager.isModuleEnabled(AutoCrystal.class)) {
-            AutoCrystal.stopAC = true;
+        if (ModuleManager.isModuleEnabled(RCCrystalAura.class)) {
+            RCCrystalAura.stopAC = true;
             stoppedAC = true;
         }
 
@@ -187,7 +187,7 @@ public class PlacementUtil {
             }
 
             if (stoppedAC) {
-                AutoCrystal.stopAC = false;
+                RCCrystalAura.stopAC = false;
             }
             return action == EnumActionResult.SUCCESS;
         } return true;

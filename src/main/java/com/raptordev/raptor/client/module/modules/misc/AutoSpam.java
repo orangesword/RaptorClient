@@ -17,7 +17,7 @@ public class AutoSpam extends Module {
     public static final List<String> spamMessages = new ArrayList<String>();
     public ModeSetting mode = registerMode("Mode", Arrays.asList("Everyone", "Me"), "Everyone");
     public IntegerSetting delay = registerInteger("Delay", 30, 10, 300);
-    public IntegerSetting index = registerInteger("Message Number", 1,0,10);
+    public IntegerSetting index = registerInteger("index", 1,0,10);
 
 
     private final Timer timer = new Timer();
@@ -32,7 +32,6 @@ public class AutoSpam extends Module {
                 if (spamMessages.size() >= index.getValue()) {
                     msg = spamMessages.get(index.getValue());
                 } else msg = "Download RaptorClient";
-
                 MessageBus.sendServerMessage(msg);
                 timer.reset();
             } else if (mode.getValue().equals("Me")){

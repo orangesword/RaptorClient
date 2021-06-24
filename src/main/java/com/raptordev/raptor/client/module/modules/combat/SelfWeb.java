@@ -77,7 +77,7 @@ public class SelfWeb extends Module {
             isSneaking = false;
         }
 
-        AutoCrystal.stopAC = false;
+        RCCrystalAura.stopAC = false;
 
         centeredBlock = Vec3d.ZERO;
         outOfTargetBlock = false;

@@ -6,7 +6,7 @@ import club.minnced.discord.rpc.DiscordRichPresence;
 import com.raptordev.raptor.api.util.player.PlayerUtil;
 import com.raptordev.raptor.client.RaptorClient;
 import com.raptordev.raptor.client.module.ModuleManager;
-import com.raptordev.raptor.client.module.modules.combat.AutoCrystal;
+import com.raptordev.raptor.client.module.modules.combat.RCCrystalAura;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiMainMenu;
 
@@ -33,7 +33,7 @@ public class DiscordManager {
         DiscordRPC.INSTANCE.Discord_Initialize(discordID, handlers, true, "");
         discordRichPresence.startTimestamp = System.currentTimeMillis() / 1000L;
         discordRichPresence.details = Minecraft.getMinecraft().currentScreen instanceof GuiMainMenu ? "In the main menu." : "Playing " + (Minecraft.getMinecraft().currentServerData != null ? ("on " + Minecraft.getMinecraft().currentServerData.serverIP + ".") : " singleplayer.");
-        discordRichPresence.state = ModuleManager.getModule(AutoCrystal.class).isAttacking ? "Using the godly CA" + "at health of " + PlayerUtil.getHealth(): "Join https://discord.gg/hzzEmtke2M";
+        discordRichPresence.state = ModuleManager.getModule(RCCrystalAura.class).isAttacking ? "Using the godly CA" + "at health of " + PlayerUtil.getHealth(): "Join https://discord.gg/hzzEmtke2M";
         discordRichPresence.largeImageKey = "big";
         discordRichPresence.largeImageText = "RaptorClient" + clientVersion;
         discordRichPresence.smallImageKey = "me";
@@ -43,7 +43,7 @@ public class DiscordManager {
             while (!Thread.currentThread().isInterrupted()) {
                 DiscordRPC.INSTANCE.Discord_RunCallbacks();
                 discordRichPresence.details = Minecraft.getMinecraft().currentScreen instanceof GuiMainMenu ? "In the main menu." : "Playing " + (Minecraft.getMinecraft().currentServerData != null ? ("on " + Minecraft.getMinecraft().currentServerData.serverIP + ".") : " singleplayer.");
-                discordRichPresence.state = ModuleManager.getModule(AutoCrystal.class).isAttacking ? "Using the godly CA" + "at health of " + PlayerUtil.getHealth() : "Join discord.gg/hzzEmtke2M";
+                discordRichPresence.state = ModuleManager.getModule(RCCrystalAura.class).isAttacking ? "Using the godly CA" + "at health of " + PlayerUtil.getHealth() : "Join discord.gg/hzzEmtke2M";
                 DiscordRPC.INSTANCE.Discord_UpdatePresence(discordRichPresence);
                 try {
                     Thread.sleep(2000L);

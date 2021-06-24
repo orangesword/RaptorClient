@@ -8,7 +8,7 @@ import com.raptordev.raptor.api.util.render.RenderUtil;
 import com.raptordev.raptor.api.util.world.EntityUtil;
 import com.raptordev.raptor.api.util.world.GeometryMasks;
 import com.raptordev.raptor.api.util.world.HoleUtil;
-import com.raptordev.raptor.api.util.world.combat.DamageUtil;
+import com.raptordev.raptor.api.util.combat.DamageUtil;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import net.minecraft.block.state.IBlockState;

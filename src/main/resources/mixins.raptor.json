@@ -29,6 +29,9 @@
     "MixinRenderLivingBase",
     "MixinRenderManager",
     "MixinRenderPlayer",
+    "MixinAbstractHorse",
+    "MixinEntityLlama",
+    "MixinEntityPig",
     "MixinWorld",
     "accessor.AccessorEntityPlayerSP"
   ]

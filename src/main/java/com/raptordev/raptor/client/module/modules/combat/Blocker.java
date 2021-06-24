@@ -7,7 +7,7 @@ import com.raptordev.raptor.api.util.misc.MessageBus;
 import com.raptordev.raptor.api.util.player.InventoryUtil;
 import com.raptordev.raptor.api.util.player.PlacementUtil;
 import com.raptordev.raptor.api.util.world.BlockUtil;
-import com.raptordev.raptor.api.util.world.combat.CrystalUtil;
+import com.raptordev.raptor.api.util.combat.CrystalUtil;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;

@@ -30,6 +30,7 @@ public class CommandManager {
         addCommand(new SetCommand());
         addCommand(new ToggleCommand());
         addCommand(new AutoSpamCommand());
+        addCommand(new BaritoneCommand());
     }
 
     public static void addCommand(Command command) {

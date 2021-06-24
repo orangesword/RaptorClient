@@ -6,7 +6,7 @@ import com.raptordev.raptor.api.setting.values.IntegerSetting;
 import com.raptordev.raptor.api.setting.values.ModeSetting;
 import com.raptordev.raptor.api.util.player.InventoryUtil;
 import com.raptordev.raptor.api.util.player.PlayerUtil;
-import com.raptordev.raptor.api.util.world.combat.DamageUtil;
+import com.raptordev.raptor.api.util.combat.DamageUtil;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.mojang.realmsclient.gui.ChatFormatting;
@@ -186,7 +186,7 @@ public class OffHand extends Module {
         if (prevSlot != -1) {
             mc.playerController.windowClick(0, prevSlot < 9 ? prevSlot + 36 : prevSlot, 0, ClickType.PICKUP, mc.player);
         } else
-            PistonCrystal.printDebug("Your inventory is full. the item that was on your offhand is going to be dropped. Open your inventory and choose where to put it", true);
+            PistonAura.printDebug("Your inventory is full. the item that was on your offhand is going to be dropped. Open your inventory and choose where to put it", true);
         // Set to false
         returnBack = false;
         tickWaited = 0;

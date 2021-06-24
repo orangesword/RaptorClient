@@ -2,7 +2,7 @@ package com.raptordev.raptor.client.command.commands;
 
 import com.raptordev.raptor.api.util.misc.MessageBus;
 import com.raptordev.raptor.client.command.Command;
-import com.raptordev.raptor.client.module.modules.combat.PistonCrystal;
+import com.raptordev.raptor.client.module.modules.combat.PistonAura;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import net.minecraft.item.ItemStack;
@@ -70,7 +70,7 @@ public class AutoGearCommand extends Command {
             for (int i = 0; i < lenghtJson; i++) {
                 String item = new JsonParser().parse(new FileReader(pathSave)).getAsJsonObject().entrySet().toArray()[i].toString().split("=")[0];
                 if (!item.equals("pointer"))
-                    PistonCrystal.printDebug("Kit avaible: " + item, false);
+                    PistonAura.printDebug("Kit avaible: " + item, false);
             }
 
         } catch (IOException e) {
@@ -156,14 +156,14 @@ public class AutoGearCommand extends Command {
             // Save
             bw.close();
             // Chat message
-            PistonCrystal.printDebug("Kit " + name + " " + operation, false);
+            PistonAura.printDebug("Kit " + name + " " + operation, false);
         } catch (IOException e) {
             errorMessage("Saving");
         }
     }
 
     private static void errorMessage(String e) {
-        PistonCrystal.printDebug("Error: " + errorMessage.get(e), true);
+        PistonAura.printDebug("Error: " + errorMessage.get(e), true);
     }
 
     public static String getCurrentSet() {

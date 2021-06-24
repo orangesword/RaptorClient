@@ -8,7 +8,7 @@ import com.raptordev.raptor.api.util.misc.Timer;
 import com.raptordev.raptor.api.util.player.InventoryUtil;
 import com.raptordev.raptor.api.util.world.BlockUtil;
 import com.raptordev.raptor.api.util.world.EntityUtil;
-import com.raptordev.raptor.api.util.world.combat.DamageUtil;
+import com.raptordev.raptor.api.util.combat.DamageUtil;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;

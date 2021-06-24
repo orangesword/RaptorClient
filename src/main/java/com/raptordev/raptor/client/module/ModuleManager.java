@@ -22,7 +22,7 @@ public class ModuleManager {
         addMod(new AntiCrystal());
         addMod(new AutoAnvil());
         addMod(new AutoArmor());
-        addMod(new AutoCrystal());
+        addMod(new RCCrystalAura());
         addMod(new Surround());
         addMod(new AutoSkull());
         addMod(new AutoTrap());
@@ -32,11 +32,12 @@ public class ModuleManager {
         addMod(new CevBreaker());
         addMod(new FastBow());
         addMod(new HoleFill());
-        addMod(new KillAura());
+        addMod(new Aura());
         addMod(new OffHand());
-        addMod(new PistonCrystal());
+        addMod(new PistonAura());
         addMod(new SelfTrap());
         addMod(new SelfWeb());
+        addMod(new Burrow());
         addMod(new TotemPopNotifier());
         //Exploits
         addMod(new FastBreak());
@@ -69,6 +70,9 @@ public class ModuleManager {
         addMod(new AntiHunger());
         addMod(new Flight());
         addMod(new Jesus());
+        addMod(new BoatFly());
+        addMod(new SafeWalk());
+        addMod(new EntityControl());
         //Misc
         addMod(new Announcer());
         addMod(new AutoGear());
@@ -142,8 +146,9 @@ public class ModuleManager {
         addMod(new ToggleMessage());
         addMod(new Console());
         addMod(new BetterConfig());
+        addMod(new BeMyFriend());
         addMod(new Drawn());
-      
+        addMod(new Baritone());
         
     }
 

@@ -49,6 +49,7 @@ public class LoadConfig {
             loadAutoGG();
             loadAutoReply();
             loadAutoRespawn();
+            loadAutoSpam();
         } catch (IOException e) {
             e.printStackTrace();
         }

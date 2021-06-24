@@ -8,7 +8,7 @@ import com.raptordev.raptor.api.util.misc.Timer;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
 import com.raptordev.raptor.client.module.ModuleManager;
-import com.raptordev.raptor.client.module.modules.combat.AutoCrystal;
+import com.raptordev.raptor.client.module.modules.combat.RCCrystalAura;
 
 
 @Module.Declaration(name = "BetterConfig", category = Category.CLIENT, Description = "Save your configs in better way", alwaysEnabled = true)
@@ -27,7 +27,7 @@ public class BetterConfig extends Module {
                 MessageBus.sendClientPrefixMessage("ConfigSaved");
             }
 
-            if (disable.getValue() && ModuleManager.getModule(AutoCrystal.class).isAttacking) {
+            if (disable.getValue() && ModuleManager.getModule(RCCrystalAura.class).isAttacking) {
                 SaveConfig.init();
                 disable();
                 MessageBus.sendClientPrefixMessage("Saved Config last time Because of pvp");

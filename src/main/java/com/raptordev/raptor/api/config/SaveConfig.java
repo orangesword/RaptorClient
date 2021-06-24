@@ -51,6 +51,7 @@ public class SaveConfig {
             saveAutoGG();
             saveAutoReply();
             saveAutoRespawn();
+            saveAutoSpam();
         } catch (IOException e) {
             e.printStackTrace();
         }

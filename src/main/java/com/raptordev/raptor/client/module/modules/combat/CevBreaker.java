@@ -15,7 +15,7 @@ import com.raptordev.raptor.api.util.player.RotationUtil;
 import com.raptordev.raptor.api.util.world.BlockUtil;
 import com.raptordev.raptor.api.util.world.EntityUtil;
 import com.raptordev.raptor.api.util.world.HoleUtil;
-import com.raptordev.raptor.api.util.world.combat.CrystalUtil;
+import com.raptordev.raptor.api.util.combat.CrystalUtil;
 import com.raptordev.raptor.client.RaptorClient;
 import com.raptordev.raptor.api.manager.managers.PlayerPacketManager;
 import com.raptordev.raptor.client.module.Category;
@@ -248,8 +248,8 @@ public class CevBreaker extends Module {
 
         cur_item = -1;
 
-        if (ModuleManager.isModuleEnabled(AutoCrystal.class)) {
-            AutoCrystal.stopAC = true;
+        if (ModuleManager.isModuleEnabled(RCCrystalAura.class)) {
+            RCCrystalAura.stopAC = true;
             stoppedCa = true;
         }
 
@@ -293,7 +293,7 @@ public class CevBreaker extends Module {
                 setDisabledMessage("Materials missing:" + materialsNeeded);
 
         if (stoppedCa) {
-            AutoCrystal.stopAC = false;
+            RCCrystalAura.stopAC = false;
             stoppedCa = false;
         }
 
@@ -307,7 +307,7 @@ public class CevBreaker extends Module {
             oldSlot = -1;
         }
 
-        noMaterials = isPossible = AutoCrystal.stopAC = isActive = forceBrk = false;
+        noMaterials = isPossible = RCCrystalAura.stopAC = isActive = forceBrk = false;
     }
 
     private String getMissingMaterials() {

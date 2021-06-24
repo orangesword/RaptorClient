@@ -105,7 +105,7 @@ public abstract class Module implements Toggleable, KeybindSetting {
         onDisable();
         if (alwaysEnabled) {
             enable();
-            setDisabledMessage("This is a always enabled module you can't turn this off");
+            MessageBus.sendClientPrefixMessage(name + "is a always enabled module you can't turn this off");
         }
         if (toggleMsg && mc.player != null) MessageBus.sendClientPrefixMessage(ModuleManager.getModule(ColorMain.class).getDisabledColor() + disabledMessage);
         setDisabledMessage(name + " turned OFF!");

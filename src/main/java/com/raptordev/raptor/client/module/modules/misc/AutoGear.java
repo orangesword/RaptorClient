@@ -5,7 +5,7 @@ import com.raptordev.raptor.api.setting.values.IntegerSetting;
 import com.raptordev.raptor.client.command.commands.AutoGearCommand;
 import com.raptordev.raptor.client.module.Category;
 import com.raptordev.raptor.client.module.Module;
-import com.raptordev.raptor.client.module.modules.combat.PistonCrystal;
+import com.raptordev.raptor.client.module.modules.combat.PistonAura;
 import net.minecraft.inventory.ClickType;
 import net.minecraft.inventory.ContainerChest;
 import net.minecraft.inventory.ContainerShulkerBox;
@@ -47,7 +47,7 @@ public class AutoGear extends Module {
         }
         // Print the config
         if (infoMsgs.getValue())
-            PistonCrystal.printDebug("Config " + curConfigName + " actived", false);
+            PistonAura.printDebug("Config " + curConfigName + " actived", false);
         // Get the inventory
         String inventoryConfig = AutoGearCommand.getInventoryKit(curConfigName);
         // If none, exit
@@ -83,7 +83,7 @@ public class AutoGear extends Module {
 
     public void onDisable() {
         if (infoMsgs.getValue() && planInventory.size() > 0)
-            PistonCrystal.printDebug("AutoSort Turned Off!", true);
+            PistonAura.printDebug("AutoSort Turned Off!", true);
     }
 
 
@@ -114,7 +114,7 @@ public class AutoGear extends Module {
         if (!openedBefore) {
             // Print
             if (infoMsgs.getValue() && !doneBefore)
-                PistonCrystal.printDebug("Start sorting inventory...", false);
+                PistonAura.printDebug("Start sorting inventory...", false);
 
             int maxValue = mc.player.openContainer instanceof ContainerChest ? ((ContainerChest) mc.player.openContainer).getLowerChestInventory().getSizeInventory()
                     : 27;
@@ -136,7 +136,7 @@ public class AutoGear extends Module {
                 finishSort = false;
                 // Print
                 if (infoMsgs.getValue())
-                    PistonCrystal.printDebug("Inventory already sorted...", true);
+                    PistonAura.printDebug("Inventory already sorted...", true);
               
                 if (closeAfter.getValue())
                     mc.player.closeScreen();
@@ -173,7 +173,7 @@ public class AutoGear extends Module {
                 finishSort = false;
                 // Print
                 if (infoMsgs.getValue()) {
-                    PistonCrystal.printDebug("Inventory sorted", false);
+                    PistonAura.printDebug("Inventory sorted", false);
                 }
                 // Check if the last slot has been placed
                 checkLastItem();
@@ -342,7 +342,7 @@ public class AutoGear extends Module {
         if (debugMode.getValue()) {
             // Print every values
             for (int valuePath : planMove) {
-                PistonCrystal.printDebug(Integer.toString(valuePath), false);
+                PistonAura.printDebug(Integer.toString(valuePath), false);
             }
         }
 
