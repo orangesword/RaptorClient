@@ -37,7 +37,7 @@ public class RaptorClient {
 
     public static final String MODNAME = "RaptorClient";
     public static final String MODID = "raptor";
-    public static final String MODVER = "v1.1";
+    public static final String MODVER = "v1.2";
 
     public static final Logger LOGGER = LogManager.getLogger(MODNAME);
     public static final EventBus EVENT_BUS = new EventManager();
