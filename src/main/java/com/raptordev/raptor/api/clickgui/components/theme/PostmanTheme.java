@@ -12,12 +12,12 @@ import com.lukflug.panelstudio.theme.Renderer;
 import com.lukflug.panelstudio.theme.RendererBase;
 import com.lukflug.panelstudio.theme.Theme;
 
-public class RaptorClientTheme implements Theme {
+public class PostmanTheme implements Theme {
     protected ColorScheme scheme;
     protected Renderer componentRenderer,containerRenderer,panelRenderer;
     protected DescriptionRenderer descriptionRenderer;
 
-    public RaptorClientTheme(ColorScheme scheme, int height, int border) {
+    public PostmanTheme(ColorScheme scheme, int height, int border) {
         this.scheme=scheme;
         panelRenderer=new ComponentRenderer(0,height,border);
         containerRenderer=new ComponentRenderer(1,height,border);
@@ -116,7 +116,7 @@ public class RaptorClientTheme implements Theme {
 
         @Override
         public ColorScheme getDefaultColorScheme() {
-            return RaptorClientTheme.this.scheme;
+            return PostmanTheme.this.scheme;
         }
     }
 }

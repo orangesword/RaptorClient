@@ -1,9 +1,8 @@
 package com.raptordev.raptor.api.clickgui;
 
 import com.raptordev.raptor.api.clickgui.components.*;
-import com.raptordev.raptor.api.clickgui.components.theme.GamesenseTheme;
 import com.raptordev.raptor.api.clickgui.components.theme.RainbowTheme;
-import com.raptordev.raptor.api.clickgui.components.theme.RaptorClientTheme;
+import com.raptordev.raptor.api.clickgui.components.theme.PostmanTheme;
 import com.raptordev.raptor.api.setting.Setting;
 import com.raptordev.raptor.api.setting.SettingsManager;
 import com.raptordev.raptor.api.setting.values.*;
@@ -53,8 +52,8 @@ public class RaptorClientGui extends MinecraftHUDGUI {
     public RaptorClientGui() {
         WIDTH = getWIDTH();
         ColorScheme scheme = new SettingsColorScheme(clickGuiModule.enabledColor, clickGuiModule.backgroundColor, clickGuiModule.settingBackgroundColor, clickGuiModule.outlineColor, clickGuiModule.fontColor, clickGuiModule.opacity);
-        gamesenseTheme = new GamesenseTheme(scheme, HEIGHT, 2, 5);
-        raptorclientTheme = new RaptorClientTheme(scheme, HEIGHT, 2);
+        gamesenseTheme = new GameSenseTheme(scheme, HEIGHT, 2, 5);
+        raptorclientTheme = new PostmanTheme(scheme, height, 2);
         clearTheme = new ClearTheme(scheme, false, HEIGHT, 1);
         clearGradientTheme = new ClearTheme(scheme, true, HEIGHT, 1);
         rainbowtheme = new RainbowTheme(scheme,  HEIGHT,()->!clickGuiModule.ignoreDisabled.getValue(), ()->clickGuiModule.buttonRainbow.getValue());

@@ -101,6 +101,7 @@ public class ModuleManager {
         addMod(new AntiAfk());
         addMod(new AutoLog());
         addMod(new AutoReconnet());
+        addMod(new AutoMount());
 
         //Render
         addMod(new BlockHighlight());

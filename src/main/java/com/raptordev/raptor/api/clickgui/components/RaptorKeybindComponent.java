@@ -23,7 +23,6 @@ public class RaptorKeybindComponent extends KeybindComponent {
         }
 
         if (hasFocus(context) && (scancode == Keyboard.KEY_BACK)) {
-            keybind.setKey(keybind.getKey());
             releaseFocus();
             return;
         }
